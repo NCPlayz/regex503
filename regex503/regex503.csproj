@@ -6,8 +6,4 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="AvalonEdit" Version="6.0.1" />
-  </ItemGroup>
-
 </Project>

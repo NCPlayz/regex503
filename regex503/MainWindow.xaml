@@ -29,9 +29,6 @@
                     <TextBlock Name="Errors" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="15" Width="255" TextWrapping="WrapWithOverflow"></TextBlock>
                 </DockPanel>
             </DockPanel>
-            <DockPanel DockPanel.Dock="Left" LastChildFill="False">
-                <!-- <Button Name="Submit" DockPanel.Dock="Top" Width="500" Height="30">Submit</Button> -->
-            </DockPanel>
         </DockPanel>
     </Grid>
 </Window>
