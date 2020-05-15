@@ -18,8 +18,12 @@ namespace regex503
             InitializeComponent();
         }
 
-        private void Text_TextChanged(object sender, TextChangedEventArgs e)
+        private void Text_TextChanged()
         {
+            TextRange allRange = new TextRange(this.TestBox.Document.ContentStart, this.TestBox.Document.ContentEnd);
+            allRange.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Black);
+            allRange.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.White);
+
             TextPointer start = this.TestBox.Document.ContentStart;
 
             try
@@ -47,6 +51,21 @@ namespace regex503
                 }
                 start = start.GetNextContextPosition(LogicalDirection.Forward);
             }
+        }
+
+        private void TestBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            this.Text_TextChanged();
+        }
+
+        private void TestBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            this.Text_TextChanged();
+        }
+
+        private void TestBox_Pasting(object sender, DataObjectPastingEventArgs e)
+        {
+            this.Text_TextChanged();
         }
     }
 }

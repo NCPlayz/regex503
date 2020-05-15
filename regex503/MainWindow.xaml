@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
         xmlns:local="clr-namespace:regex503"
         mc:Ignorable="d"
         Title="Regex503" Height="450" Width="800">
@@ -16,7 +15,7 @@
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                 <Label  Content="REGULAR EXPRESSION" DockPanel.Dock="Top" FontWeight="Bold"/>
-                <TextBox Name="RegexBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="15pt" Width="500" Height="30" TextChanged="Text_TextChanged"/>
+                <TextBox Name="RegexBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="15pt" Width="500" Height="30"/>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                 <DockPanel DockPanel.Dock="Top" LastChildFill="False">
@@ -24,7 +23,7 @@
                     <Label Content="ERRORS" DockPanel.Dock="Left" FontWeight="Bold" Width="260"/>
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
-                    <RichTextBox Name="TestBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="20" AcceptsReturn="True" AcceptsTab="True" Width="500" Height="200" Block.LineHeight="2" TextChanged="Text_TextChanged"/>
+                    <RichTextBox Name="TestBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="20" AcceptsReturn="True" AcceptsTab="True" Width="500" Height="200" Block.LineHeight="2" PreviewTextInput="TestBox_PreviewTextInput" PreviewKeyDown="TestBox_PreviewKeyDown" DataObject.Pasting="TestBox_Pasting"/>
                     <DockPanel Width="5"></DockPanel>
                     <TextBlock Name="Errors" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="15" Width="255" TextWrapping="WrapWithOverflow"></TextBlock>
                 </DockPanel>
