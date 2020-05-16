@@ -15,7 +15,7 @@
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                 <Label  Content="REGULAR EXPRESSION" DockPanel.Dock="Top" FontWeight="Bold"/>
-                <TextBox Name="RegexBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="15pt" Width="500" Height="30"/>
+                <TextBox Name="RegexBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="15pt" Width="500" Height="30" PreviewTextInput="RegexBox_PreviewTextInput" PreviewKeyDown="RegexBox_PreviewKeyDown" DataObject.Pasting="RegexBox_Pasting"/>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                 <DockPanel DockPanel.Dock="Top" LastChildFill="False">

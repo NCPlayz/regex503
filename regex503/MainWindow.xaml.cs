@@ -18,24 +18,13 @@ namespace regex503
             InitializeComponent();
         }
 
-        private void Text_TextChanged()
+        private void Test_TextChanged()
         {
-            TextRange allRange = new TextRange(this.TestBox.Document.ContentStart, this.TestBox.Document.ContentEnd);
-            allRange.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Black);
-            allRange.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.White);
-
             TextPointer start = this.TestBox.Document.ContentStart;
 
-            try
-            {
-                Regex.Match("", this.RegexBox.Text);
-            }
-            catch (ArgumentException err)
-            {
-                this.Errors.Text = err.Message;
-                return;
-            }
-            this.Errors.Text = "";
+            TextRange allRange = new TextRange(start, this.TestBox.Document.ContentEnd);
+            allRange.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Black);
+            allRange.ApplyPropertyValue(TextElement.BackgroundProperty, Brushes.White);
 
             while (start != null && start.CompareTo(TestBox.Document.ContentEnd) < 0)
             {
@@ -53,19 +42,52 @@ namespace regex503
             }
         }
 
+        // Overloads to avoid using TextChanged and recursing 
         private void TestBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            this.Text_TextChanged();
+            this.Test_TextChanged();
         }
 
         private void TestBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
         {
-            this.Text_TextChanged();
+            this.Test_TextChanged();
         }
 
         private void TestBox_Pasting(object sender, DataObjectPastingEventArgs e)
         {
-            this.Text_TextChanged();
+            this.Test_TextChanged();
+        }
+
+        private void Regex_Validate()
+        {
+            try
+            {
+                Regex.Match("", this.RegexBox.Text);
+            }
+            catch (ArgumentException err)
+            {
+                this.Errors.Text = err.Message;
+                return;
+            }
+            this.Errors.Text = "";
+
+            // Update the text highlighting
+            this.Test_TextChanged();
+        }
+
+        private void RegexBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            this.Regex_Validate();
+        }
+
+        private void RegexBox_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            this.Regex_Validate();
+        }
+
+        private void RegexBox_Pasting(object sender, DataObjectPastingEventArgs e)
+        {
+            this.Regex_Validate();
         }
     }
 }
