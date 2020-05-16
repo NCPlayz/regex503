@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:regex503"
+        xmlns:controls="clr-namespace:regex503.UserControls"
         mc:Ignorable="d"
         Title="Regex503" Height="450" Width="800">
     <Grid>
@@ -15,7 +16,8 @@
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                 <Label  Content="REGULAR EXPRESSION" DockPanel.Dock="Top" FontWeight="Bold"/>
-                <TextBox Name="RegexBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="15pt" Width="500" Height="30" PreviewTextInput="RegexBox_PreviewTextInput" PreviewKeyDown="RegexBox_PreviewKeyDown" DataObject.Pasting="RegexBox_Pasting"/>
+                <TextBox Name="RegexBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="15pt" Width="450" Height="30" PreviewTextInput="RegexBox_PreviewTextInput" PreviewKeyDown="RegexBox_PreviewKeyDown" DataObject.Pasting="RegexBox_Pasting"/>
+                <controls:RegexFlags/>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                 <DockPanel DockPanel.Dock="Top" LastChildFill="False">

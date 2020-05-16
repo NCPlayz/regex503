@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="regex503.UserControls.RegexFlags"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:regex503.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="50">
+    <ComboBox Width="50" Height="30">
+        <ComboBoxItem>
+            <CheckBox>
+                global
+            </CheckBox>
+        </ComboBoxItem>
+        <ComboBoxItem>
+            <CheckBox>
+                multiline
+            </CheckBox>
+        </ComboBoxItem>
+        <ComboBoxItem>
+            <CheckBox>
+                insensitive
+            </CheckBox>
+        </ComboBoxItem>
+        <ComboBoxItem>
+            <CheckBox>
+                extended
+            </CheckBox>
+        </ComboBoxItem>
+        <ComboBoxItem>
+            <CheckBox>
+                extra
+            </CheckBox>
+        </ComboBoxItem>
+        <ComboBoxItem>
+            <CheckBox>
+                single line
+            </CheckBox>
+        </ComboBoxItem>
+    </ComboBox>
+</UserControl>
