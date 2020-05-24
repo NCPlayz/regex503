@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:regex503"
+        xmlns:uc="clr-namespace:regex503.UserControls"
         mc:Ignorable="d"
         Title="Regex503" Height="450" Width="800">
     <Grid>
@@ -15,7 +16,7 @@
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                 <Label  Content="REGULAR EXPRESSION" DockPanel.Dock="Top" FontWeight="Bold"/>
-                <TextBox Name="RegexBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="15pt" Width="500" Height="30" PreviewTextInput="RegexBox_PreviewTextInput" PreviewKeyDown="RegexBox_PreviewKeyDown" DataObject.Pasting="RegexBox_Pasting"/>
+                <uc:RegexBox x:Name="RegexBox" DockPanel.Dock="Left" Width="500" Height="30" RegexChanged="RegexBox_RegexChanged"></uc:RegexBox>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                 <DockPanel DockPanel.Dock="Top" LastChildFill="False">
@@ -23,7 +24,7 @@
                     <Label Content="ERRORS" DockPanel.Dock="Left" FontWeight="Bold" Width="260"/>
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
-                    <RichTextBox Name="TestBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="20" AcceptsReturn="True" AcceptsTab="True" Width="500" Height="200" Block.LineHeight="2" PreviewTextInput="TestBox_PreviewTextInput" PreviewKeyDown="TestBox_PreviewKeyDown" DataObject.Pasting="TestBox_Pasting"/>
+                    <RichTextBox Name="TestBox" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="20" AcceptsReturn="True" AcceptsTab="True" Width="500" Height="200" Block.LineHeight="2" TextChanged="TestBox_TextChanged"/>
                     <DockPanel Width="5"></DockPanel>
                     <TextBlock Name="Errors" DockPanel.Dock="Left" FontFamily="Consolas" FontSize="15" Width="255" TextWrapping="WrapWithOverflow"></TextBlock>
                 </DockPanel>
